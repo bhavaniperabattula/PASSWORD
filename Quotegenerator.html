@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        .container{
+            height: 50vh;
+            width: 50vw;
+            background-color: blue;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        #btn{
+            padding: 10px;
+            font-weight: bold;
+            font-family: cursive;
+            border-color: black;
+            cursor: pointer;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="quote">Click the button to generate a quote!</p>
+        <p id="author"></p>
+    </div><br>
+    <button id="btn">Click to generate a quote</button>
+
+    <script>
+        var a = document.querySelector(".container");
+        var btn = document.querySelector("#btn");
+        let data = [
+            {
+               
+                "quote": "Thinking is the capital, Enterprise is the way, Hard Work is the solution.",
+                "author": "Abdul Kalam"
+            },
+            {
+               
+                "quote": "If You Can't Make It Good, At Least Make It Look Good.",
+                "author": "Bill Gates"
+            },
+            {
+                
+                "quote": "Heart be brave. If you cannot be brave, just go. Love's glory is not a small thing.",
+                "author": "Rumi"
+            },
+            {
+                
+                "quote": "It is bad for a young man to sin; but it is worse for an old man to sin.",
+                "author": "Abu Bakr (R.A)"
+            },
+            {
+                
+                "quote": "If You Are Out To Describe The Truth, Leave Elegance To The Tailor.",
+                "author": "Albert Einstein"
+            }
+        ];
+
+        btn.addEventListener("click", () => {
+            // Change background color randomly
+            let bgclr = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            a.style.backgroundColor = bgclr;
+            let bg="#" + Math.floor(Math.random() * 16777215).toString(16);
+            var quo=document.querySelector("#quote");
+            quo.style.color=bg;
+            quo.style.fontWeight="1000px";
+            quo.style.fontSize="30px";
+            var aut=document.querySelector("#author");
+            aut.style.color=bg;
+            aut.style.fontSize="30px";
+            // Select a random quote
+            let randomIndex = Math.floor(Math.random() * data.length);
+            quo.textContent = data[randomIndex].quote;
+            aut.textContent = data[randomIndex].author;
+        });
+    </script>
+</body>
+</html>
