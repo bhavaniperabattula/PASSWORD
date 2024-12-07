@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #674f4f;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  width: 330px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffa557;
+}
+
+.time {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #b6daf7;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.day {
+  font-size: 1.5rem;
+  color: #bcd11d;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+   </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Digital Watch</h1>
+      <div class="time"></div>
+      <div class="day"></div>
+    </div>
+
+    <script>
+        var time = document.getElementsByClassName("time")[0];
+var day = document.getElementsByClassName("day")[0];
+// console.log(time);
+// console.log(day);    
+function todaytime() {
+  date = new Date();
+  newdate = date.toDateString();
+  // fullyear = date.getFullYear();
+  // month = date.getMonth();
+  // day = date.getDate();
+  // console.log(date);
+  // console.log(fullyear);
+  // console.log(month);
+  // console.log(day);
+  day.innerHTML = newdate;
+  // console.log(newdate);
+
+  // newtime=date.toTimeString()
+  // console.log(newtime);
+  correct_time = date.toLocaleTimeString();
+  // console.log(correct_time);
+  time.innerHTML = correct_time;
+}
+setInterval(todaytime,1000)
+//   todaytime();
+    </script>
+  </body>
+</html>
