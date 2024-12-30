@@ -14,6 +14,9 @@
         #movieTitle {
             width: 250px;
             margin-top: 20px;
+
+
+            
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -54,7 +57,7 @@
 async function searchMovie() {
     const movieTitle = document.getElementById('movieTitle').value;
     const url = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;
-    // console.log(url)
+    console.log(url)
 
     const response = await fetch(url);
     const data = await response.json();
