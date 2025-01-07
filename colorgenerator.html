@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
+        h1{
+            color: blueviolet;
+            font-family: cursive;
+        }
+        .container{
+            height: 50vh;
+            width: 50vw;
+            background-color: aqua;
+        }
+        #btn{
+            padding: 10px;
+            border-color: blueviolet;
+            font-weight: 700;
+            font-family:cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Generator</h1>
+    <div class="container"></div><br>
+    <button id="btn">Click to Generate</button>
+
+    <script>
+        var a=document.querySelector(".container");
+        var b=document.querySelector("#btn");
+        i=0;
+        b.addEventListener("click",()=>{
+            // var arr = ["red", "green", "blue"]; 
+            // a.style.backgroundColor = arr[i];  
+            // i++;  
+            // if (i >= arr.length) {
+            //     i = 0; 
+            // }   
+            let bgclr="#"+Math.floor(Math.random()*16777215).toString(16);
+            a.style.backgroundColor=bgclr;
+            console.log(bgclr);
+            
+        })
+    </script>
+</body>
+</html>
